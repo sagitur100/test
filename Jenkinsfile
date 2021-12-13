@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh chmod +x ./add.py ./test_add.py 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+		echo 'Building'
             }
         }
 	stage('Test') {
