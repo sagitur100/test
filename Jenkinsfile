@@ -12,7 +12,8 @@ pipeline {
         }
 	stage('Test') {
 	    steps {
-               sh 'python -m pytest'
+               sh 'python -m pip install pytest'
+	       sh 'python -m pytest'
 	    }
         }
 	stage('Deploy') {
