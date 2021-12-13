@@ -1,7 +1,7 @@
 pipeline {
     agent {
       docker { 
-	  image 'python:3-slim' 
+	  image 'python:3-alpine' 
       } 
     }
     stages {
@@ -12,8 +12,7 @@ pipeline {
         }
 	stage('Test') {
 	    steps {
-                python pip install pytest
-		sh 'pytest'
+               sh 'python -m pytest'
 	    }
         }
 	stage('Deploy') {
