@@ -1,5 +1,5 @@
 pipeline {
-    docker { image 'python:3-slim' }
+    dgent docker { image 'python:3-slim' }
 
     stages {
         stage('Build') {
