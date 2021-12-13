@@ -1,17 +1,18 @@
 pipeline {
     agent {
       docker { 
-	image 'python:3-slim' 
+	  image 'python:3-slim' 
       } 
     }
     stages {
         stage('Build') {
             steps {
-		pip install pytest
+		echo 'Building..'
             }
         }
 	stage('Test') {
 	    steps {
+                python -m pip install pytest 
 		sh 'pytest'
 	    }
         }
