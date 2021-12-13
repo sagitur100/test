@@ -12,8 +12,7 @@ pipeline {
         }
 	stage('Test') {
 	    steps {
-               sh 'python -m pip install pytest'
-	       sh 'python -m pytest'
+               sh 'python -m venv env; source ./env/bin/activate; python -m pip install pytest; python -m pytest'
 	    }
         }
 	stage('Deploy') {
